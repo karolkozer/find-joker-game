@@ -1,0 +1,444 @@
+/**************************************************************
+** BASIC SETUP **
+**************************************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x:hidden;
+    overflow-y: hidden;
+}
+
+body {
+    background-image: url(img/batman-background.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    font-family:'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+    color: #2C2D2F;
+    position: relative;
+}
+
+section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/**************************************************************
+** REUSABLE COMPONENTS **
+**************************************************************/
+h1 {
+    font-size: 280%;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 145%;
+    letter-spacing: 4px;
+    word-spacing: 2px;
+}
+
+/*---------- BUTTON ----------*/
+button {
+    padding: 10px 25px;
+    font-size: 200%;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: #2C2D2F;
+    font-weight: 900;
+    border: 6px solid  #2C2D2F;
+    line-height: 145%;
+    letter-spacing: 4px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    outline: none;
+}
+
+button:hover {
+    border: 6px solid  #e3e3e3;
+}
+
+/*---------- CHARACTERS ----------*/
+.character-0-home-screen,
+.character-1-home-screen,
+.character-2-home-screen{
+    display: block;
+    position: absolute;
+}
+
+/**************************************************************
+** BATMAN LOGO **
+**************************************************************/
+.logo-batman {
+    width: 480px;
+    margin: 50px auto;
+}
+
+.logo {
+    width: 100%;
+}
+
+/**************************************************************
+** SECTION HOME PAGE **
+**************************************************************/
+.section-home-page {
+    text-align: center;
+    padding-top: 244px
+}
+
+/*---------- TEXT BOX ----------*/
+.text-box {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.find-joker-text {
+    width: 40%;
+    margin-top: 20px;
+}
+
+/*---------- CHARACTERS ----------*/
+.character-0-home-screen {
+    width: 24%;
+    top: 46%;
+    left: 0;
+    opacity: 0;
+    -webkit-animation: batmanHomePage 1.5s alternate 1 both;
+    animation: batmanHomePage 1.5s alternate 1 both;
+}
+
+.character-1-home-screen {
+    top: 40%;
+    right: 0;
+    opacity: 0;
+    width: 24%;
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-animation: robinHomePage 1.5s 0.6s alternate forwards, rotate 1.5s 2s alternate infinite ;
+}
+
+/*---------- BUTTON ----------*/
+.btn-start {
+    margin-top: 50px;
+}
+
+/**************************************************************
+** SECTION GAME **
+**************************************************************/
+.section-game {
+    padding-top: 244px;
+    display: none;
+    text-align: center;
+}
+
+/*---------- CARD CONTAINER ----------*/
+.card-container {
+    width: 650px;
+    margin: 0 auto;
+    margin-top: -10px;
+    opacity: 0;
+    -webkit-animation: 0.5s 0.3s alternate ease-in-out 1 forwards;
+    animation: 0.5s 0.3s alternate ease-in-out 1 forwards;
+}
+
+.card-box {
+    -webkit-perspective: 700;
+    width: 180px;
+    height: 180px;
+    float: left;
+    margin: 2.7%;
+    border-radius: 20px;
+    position: relative;
+}
+
+.flipped {
+    -webkit-transform: rotateY(-90deg);
+}
+
+.card {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    margin: 10px auto;
+    -webkit-transition: all 0.4s ease-out;
+    -webkit-transform-origin: 90px 90px -90px;
+    border-radius: 20px;
+}
+
+.face {
+    box-shadow: 2px 12px 80px 1px  rgba(56, 56, 56, 0.39);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-origin: 0 0;
+    background-color: #2C2D2F;
+    border-radius: 5px;
+}
+
+.front {
+    -webkit-transform: rotateY(0deg);
+}
+
+.back {
+    -webkit-transform: rotateY(90deg);
+    left: 180px;
+    background-color: rgba(217, 155, 0, 0.65);
+}
+
+.back img, .face img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+/*---------- CHARACTERS ----------*/
+.sg .character-1-home-screen {
+    width: 25%;
+    top: 45%;
+    right: 0;
+    opacity: 0;
+    -webkit-animation: display 0.5s 0.8s alternate ease-in-out 1 forwards;
+}
+
+.sg .character-0-home-screen {
+    top: 45%;
+    -webkit-animation:  1.5s alternate ease-in-out 1 forwards;
+}
+
+/*---------- POST TEXT  ----------*/
+.post {
+    background-color: #2C2D2F;
+    color: #cc9b02;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    padding: 6px 15px;
+    font-size: 130%;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 27%;
+    right: 18%;
+    -webkit-animation: sidebar 0.8s 1.3s alternate ease-in-out 1 forwards;
+}
+
+.post:first-child {
+    top: 19%;
+    right: 12%;
+    -webkit-animation: sidebar 0.8s 0.8s alternate ease-in-out 1 forwards;
+}
+
+.post:last-child {
+    top: 35%;
+    right: 12%;
+    -webkit-animation: sidebar 0.8s 1.6s alternate ease-in-out 1 forwards;
+}
+
+/**************************************************************
+** SECTION GAME END **
+**************************************************************/
+.section-game-end {
+    text-align: center;
+    padding-top: 244px;
+    display: none;
+}
+
+.ge .post {
+    opacity: 0;
+    top: 35%;
+    right: 50%;
+    padding: 10px 20px;
+    font-size: 240%;
+    -webkit-animation: sidebarEndText 0.8s 0.2s alternate ease-in-out 1 forwards;
+}
+
+.ge .post:last-child {
+    top: 50%;
+    right: 35%;
+    -webkit-animation: sidebarEndText2 0.8s 0.8s alternate ease-in-out 1 forwards;
+}
+
+/*---------- CHARACTERS ----------*/
+.ge .character-1-home-screen {
+    opacity: 0;
+    width: 18%;
+    top: 38%;
+    right: 6%;
+    -webkit-animation: display 0.8s 1.4s alternate ease-in-out 1 forwards;
+}
+
+.ge .character-0-home-screen {
+    opacity: 0;
+    top: 55%;
+    -webkit-animation: display 0.8s 1.8s alternate ease-in-out 1 forwards;
+}
+
+.ge .character-2-home-screen {
+    opacity: 0;
+    width: 22%;
+    top: 58%;
+    left: 28%;
+    -webkit-animation: batman-up 1.2s 2.3s alternate ease-in-out 1 forwards, batman-rotate 1.4s 3.5s alternate infinite ;
+}
+
+/**************************************************************
+** ANIMATIONS **
+**************************************************************/
+@-webkit-keyframes batmanHomePage {
+    0%{
+        opacity: 0;
+        -webkit-transform: translate(-40%, -30%);
+        transform: translate(-40%, -30%);
+    }
+    100%{
+        opacity: 1;
+        -webkit-transform: translate(0%, 0%);
+        transform: translate(0%, 0%);
+    }
+}
+@keyframes batmanHomePage {
+    0%{
+        opacity: 0;
+        -webkit-transform: translate(-40%, -30%);
+        transform: translate(-40%, -30%);
+    }
+    100%{
+        opacity: 1;
+        -webkit-transform: translate(0%, 0%);
+        transform: translate(0%, 0%);
+    }
+}
+
+@-webkit-keyframes robinHomePage {
+    0%{
+        opacity: 0;
+        -webkit-transform: translate(50%, -50%) rotateY(-180deg);
+        transform: translate(50%, -50%) rotateY(-180deg);
+    }
+    100%{
+        opacity: 1;
+        -webkit-transform: translate(0, 0) rotateY(-180deg);
+        transform: translate(0, 0) rotateY(-180deg);
+    }
+}
+
+@keyframes robinHomePage {
+    0%{
+        opacity: 0;
+        -webkit-transform: translate(50%, -50%) rotateY(-180deg);
+        transform: translate(50%, -50%) rotateY(-180deg);
+    }
+    100%{
+        opacity: 1;
+        -webkit-transform: translate(0, 0) rotateY(-180deg);
+        transform: translate(0, 0) rotateY(-180deg);
+    }
+}
+
+@-webkit-keyframes rotate {
+    0%{
+        -webkit-transform: translate(0, 0) rotate(0deg) rotateY(-180deg);
+        transform: translate(0, 0) rotate(0deg) rotateY(-180deg);
+    }
+    100%{
+        -webkit-transform: translate(-10%, -20%) rotate(25deg) rotateY(-180deg);
+        transform: translate(-10%, -20%) rotate(25deg) rotateY(-180deg);
+    }
+}
+
+@keyframes rotate {
+    0%{
+        -webkit-transform: translate(0, 0) rotate(0deg) rotateY(-180deg);
+        transform: translate(0, 0) rotate(0deg) rotateY(-180deg);
+    }
+    100%{
+        -webkit-transform: translate(-10%, -20%) rotate(25deg) rotateY(-180deg);
+        transform: translate(-10%, -20%) rotate(25deg) rotateY(-180deg);
+    }
+}
+
+@-webkit-keyframes display {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+
+@keyframes display {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+
+@-webkit-keyframes displayJoker {
+    0%, 100% { opacity: 0;}
+    50% { opacity: 1;}
+}
+
+@keyframes displayJoker {
+    0%, 100% { opacity: 0;}
+    50% { opacity: 1;}
+}
+
+@-webkit-keyframes sidebar {
+    from {-webkit-transform: translate(380%, 0);transform: translate(380%, 0); opacity: 1;}
+    to {-webkit-transform: translate(0%, 0%);transform: translate(0%, 0%); opacity: 1;};
+}
+
+@keyframes sidebar {
+    from {-webkit-transform: translate(380%, 0);transform: translate(380%, 0); opacity: 1;}
+    to {-webkit-transform: translate(0%, 0%);transform: translate(0%, 0%); opacity: 1;};
+}
+
+@-webkit-keyframes sidebarEndText {
+    from {-webkit-transform: translate(-380%, 0);transform: translate(-380%, 0); opacity: 1;}
+    to {-webkit-transform: translate(0%, 0%);transform: translate(0%, 0%); opacity: 1;};
+}
+
+@keyframes sidebarEndText {
+    from {-webkit-transform: translate(-380%, 0);transform: translate(-380%, 0); opacity: 1;}
+    to {-webkit-transform: translate(0%, 0%);transform: translate(0%, 0%); opacity: 1;};
+}
+
+@-webkit-keyframes sidebarEndText2 {
+    from {-webkit-transform: translate(380%, 0);transform: translate(380%, 0); opacity: 1;}
+    to {-webkit-transform: translate(0%, 0%);transform: translate(0%, 0%); opacity: 1;};
+}
+
+@keyframes sidebarEndText2 {
+    from {-webkit-transform: translate(380%, 0);transform: translate(380%, 0); opacity: 1;}
+    to {-webkit-transform: translate(0%, 0%);transform: translate(0%, 0%); opacity: 1;};
+}
+
+@-webkit-keyframes batman-up {
+    from {-webkit-transform: translate(0, 100%);transform: translate(0, 100%); opacity: 0;}
+    to {-webkit-transform: translate(0, 0);transform: translate(0, 0); opacity: 1;};
+}
+
+@keyframes batman-up {
+    from {-webkit-transform: translate(0, 100%);transform: translate(0, 100%); opacity: 0;}
+    to {-webkit-transform: translate(0, 0);transform: translate(0, 0); opacity: 1;};
+}
+
+@-webkit-keyframes batman-rotate {
+    from {-webkit-transform: rotate(0);transform: rotate(0);}
+    to {-webkit-transform: rotate(15deg);transform: rotate(15deg);};
+}
+
+@keyframes batman-rotate {
+    from {-webkit-transform: rotate(0);transform: rotate(0);}
+    to {-webkit-transform: rotate(15deg);transform: rotate(15deg);};
+}
+
+
+
+
+
+
+

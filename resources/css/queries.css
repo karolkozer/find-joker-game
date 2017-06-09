@@ -1,0 +1,310 @@
+/* Big tablets from 1024px to 1200px (width smaller than the 1140px row) */
+@media only screen and (max-width: 1200px) {
+    
+    body {
+        font-size: 18px;
+    }
+    
+/**************************************************************
+** SECTION GAME **
+**************************************************************/
+    
+    .character-0-home-screen {
+        top: 54%;
+    }
+    
+    .character-1-home-screen {
+        top: 48%;
+    }
+    
+    .card-box {
+        width: 90px;
+        height: 90px;
+        margin: 8%;
+    }
+
+    .card {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .sg .character-1-home-screen {
+        width: 22%;
+        top: 45%;
+    }
+    
+    .post {
+        font-size: 120%;
+        right: 14%;
+    }
+
+    .post:first-child {
+        right: 6%;
+    }
+
+    .post:last-child {
+        top: 35%;
+        right: 6%;
+    }
+    
+/**************************************************************
+** SECTION GAME END **
+**************************************************************/
+    .ge .post {
+        right: 50%;  
+    }
+
+    .ge .post:last-child {
+        top: 50%;
+        right: 35%;
+        -webkit-animation: sidebarEndText2 0.8s 0.8s alternate ease-in-out 1 forwards;
+    }
+
+    /*---------- CHARACTERS ----------*/
+    .ge .character-1-home-screen {
+        top: 52%;
+    }
+
+    .ge .character-0-home-screen {
+        top: 66%;
+    }
+
+    .ge .character-2-home-screen {
+        top: 68%;
+    }
+
+    
+}
+
+/* Small tablets to big tablets: from 768px to 1023px */
+@media only screen and (max-width: 1023px) {
+    
+        body {
+        font-size: 16px;
+    }
+    
+/**************************************************************
+** SECTION GAME **
+**************************************************************/
+    
+    .character-0-home-screen {
+        top: 64%;
+    }
+    
+    .character-1-home-screen {
+        top: 58%;
+    }
+    
+    .card-box {
+        width: 90px;
+        height: 90px;
+        margin: 8%;
+    }
+
+    .card {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .sg .character-1-home-screen,
+    .sg .character-0-home-screen {
+        display: none
+    }
+    
+    .post {
+        font-size: 120%;
+        top: 30%;
+        right: 44%;
+    }
+
+    .post:first-child {
+        top: 30%;
+        right: 65%;
+    }
+
+    .post:last-child {
+        top: 30%;
+        right: 17%;
+        -webkit-animation: sidebar 0.8s 1.6s alternate ease-in-out 1 forwards;
+    }
+    
+/**************************************************************
+** SECTION GAME END **
+**************************************************************/
+    .ge .post {
+        top: 40%;
+        right: 50%;  
+    }
+
+    .ge .post:last-child {
+        top: 55%;
+    }
+
+    /*---------- CHARACTERS ----------*/
+    .ge .character-1-home-screen {
+        top: 66%;
+    }
+
+    .ge .character-0-home-screen {
+        top: 76%;
+    }
+
+    .ge .character-2-home-screen {
+        top: 78%;
+    }
+    
+}
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+    
+    body {
+        font-size: 16px;
+    }
+    
+    .logo-batman {
+        width: 380px;
+    }    
+    
+/**************************************************************
+** SECTION GAME **
+**************************************************************/
+    
+    .character-0-home-screen,
+    .character-1-home-screen {
+        display: none;
+    }
+    
+    .card-container {
+        width: 400px;
+    }
+
+    .card-box {
+        -webkit-perspective: 800;
+        width: 90px;
+        height: 90px;
+        margin: 4%;
+    }
+
+    .card {
+        width: 90px;
+        height: 90px;
+    }
+
+
+    .back {
+        left: 90px;
+    }
+
+    .post {
+        font-size: 90%;
+        top: 70%;
+        right: 43%;
+    }
+
+    .post:first-child {
+        top: 70%;
+        right: 63%;
+    }
+
+    .post:last-child {
+        top: 70%;
+        right: 18%;
+    }
+    
+/**************************************************************
+** SECTION GAME END **
+**************************************************************/
+    .ge .post {
+        top: 40%;
+        right: 40%;  
+    }
+
+    .ge .post:last-child {
+        right: 30%; 
+    }
+
+    /*---------- CHARACTERS ----------*/
+    .ge .character-1-home-screen,
+    .ge .character-0-home-screen {
+        display: none;
+    }
+    
+    .ge .character-2-home-screen {
+        top: 72%;
+        width: 38%;
+    }
+    
+}
+
+/* Small phones from 0 to 480px */
+@media only screen and (max-width: 480px) {
+    
+        body {
+        font-size: 10px;
+    }
+    
+    .logo-batman {
+        width: 310px;
+    }    
+    
+/**************************************************************
+** SECTION GAME **
+**************************************************************/
+    
+    .card-container {
+        width: 360px;
+    }
+
+    .card-box {
+        -webkit-perspective: 700;
+        width: 90px;
+        height: 90px;
+    }
+
+    .card {
+        width: 90px;
+        height: 90px;
+    }
+
+
+    .post {
+        font-size: 140%;
+        top: 80%;
+        right: 38%;
+    }
+
+    .post:first-child {
+        top: 80%;
+        right: 63%;
+    }
+
+    .post:last-child {
+        top: 80%;
+        right: 8%;
+    }
+    
+/**************************************************************
+** SECTION GAME END **
+**************************************************************/
+    .ge .post {
+        top: 40%;
+        right: 40%;  
+    }
+
+    .ge .post:last-child {
+        right: 30%; 
+    }
+
+    /*---------- CHARACTERS ----------*/
+    .ge .character-1-home-screen,
+    .ge .character-0-home-screen {
+        display: none;
+    }
+    
+    .ge .character-2-home-screen {
+        top: 72%;
+        width: 38%;
+    }
+    
+}
